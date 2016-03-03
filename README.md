@@ -1,4 +1,4 @@
-Datatroniq dashboard
+Angular simple rest app example
 ===
 
 AngularJS app sample
