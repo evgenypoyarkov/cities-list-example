@@ -1,0 +1,71 @@
+@import "variables"
+
+html
+  height 100%
+
+body
+  min-height 100%
+  height 1px
+
+main
+  height "calc(100% - %s)" % $navbar-height
+
+.page-header
+.navbar
+  margin 0
+  border 0
+  padding 0
+
+.m-0
+  margin 0
+
+.p-0
+  padding 0
+
+.panel
+  border none
+
+.panel-heading
+  padding 0 20px
+  border-radius 3px 3px 0 0
+  font 700 18px/49px 'Open Sans', sans-serif
+
+.panel-title .fa
+  font-size 18px
+  line-height 49px
+  font-weight 700
+
+.panel-body
+  border 1px solid $gray-soft
+  border-top none
+
+.flex
+  display flex
+
+  &-column
+    flex-direction column
+    &--stretched
+      flex-grow 2
+
+  &-row
+    flex-direction row
+
+a
+  &:focus
+  &:hover
+  &:active
+    text-decoration none
+
+a
+input
+button
+.btn
+  outline none
+
+  &:focus
+  &:hover
+  &:active
+    outline none
+
+  &:active:focus
+    outline none

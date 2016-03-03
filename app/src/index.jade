@@ -1,0 +1,12 @@
+//- doctype html
+html
+  head
+    meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1")
+    meta(charset="utf-8")
+    base(href="/")
+
+  body(ng-app="app")
+    header(ui-view="header").page-header
+    main(ui-view="mainView").container-fluid
+      
+    script(type="application/javascript", src="bundle.js")
