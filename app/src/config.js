@@ -6,5 +6,6 @@ export default angular.module('app.config', [])
     })
     $locationProvider.hashPrefix('!')
     $urlRouterProvider.otherwise('/error/404')
-    RestangularProvider.setBaseUrl('/api/1')
+
+    RestangularProvider.setBaseUrl('http://52.29.128.199')
   })

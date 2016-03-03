@@ -2,6 +2,10 @@ import '../assets/app.styl'
 import vendor from './vendor'
 
 const dependencies = [
+  //components
+  require('../components/lib').default.name,
+  require('../components/cities').default.name,
+
   // states
   require('./error').default.name,
   require('./root').default.name,

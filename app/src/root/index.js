@@ -1,6 +1,7 @@
 const dependencies = [
   require('./root.ctrl').default.name,
-  require('./header').default.name
+  require('./header').default.name,
+  require('./main').default.name
 ]
 
 export default angular.module('app.root', dependencies)
@@ -20,6 +21,35 @@ export default angular.module('app.root', dependencies)
           }
         })
         .state('root.index', {
-          url: '/'
+          url: '/?limit&offset&sort&sdir',
+          views: {
+            state: {
+              controller: 'MainCtrl',
+              templateUrl: require('file?name=main.tpl.html!jade-html!./main/main.tpl.jade'),
+              resolve: {
+                cities: function($stateParams, CitiesService) {
+                  return CitiesService.list($stateParams)
+                }
+              }
+            },
+          },
+          params: {
+            limit: {
+              value: '10',
+              squash: true
+            },
+            offset: {
+              value: '0',
+              squash: true
+            },
+            sdir: {
+              value: 'asc',
+              squash: true
+            },
+            sort: {
+              value: 'city',
+              squash: true
+            }
+          }
         })
   })

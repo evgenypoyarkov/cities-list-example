@@ -1,0 +1,11 @@
+.city
+  .city__name 
+    span {{ city.city }}
+  .city__state 
+    span.text-muted {{ city.state }}
+  .city__population 
+    | {{ city.population }}
+    span.text-muted population 
+  .city__location 
+    | {{ city.location }}
+    span.text-muted coordinates 

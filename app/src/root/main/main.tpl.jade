@@ -1,0 +1,40 @@
+.main
+  .main__controls.flex.flex-row
+    .main__controls__sort
+      select(
+        ng-options="field for field in options.sorting.fields" 
+        ng-model="sorting.sort" 
+        ng-change="changePage()"
+      ).form-control
+      span.text-muted sorting
+      
+    .main__controls__direction
+      select(
+        ng-options="field for field in options.sorting.directions" 
+        ng-model="sorting.sdir" 
+        ng-change="changePage()"
+      ).form-control
+      span.text-muted direction
+      
+  
+  .main__cities.flex
+    city(item="city" ng-repeat="city in cities track by $index")
+
+  .main__controls.flex.flex-row(ng-show="pagination.total > pagination.limit")
+    .main__controls__limit
+      select(
+        ng-options="n for n in options.limits" 
+        ng-model="pagination.limit" 
+        ng-change="changePage()"
+        convert-to-number
+      ).form-control
+      
+    .main__controls__pagination
+      uib-pagination(
+        items-per-page="pagination.limit"
+        ng-model="pagination.page"
+        total-items="pagination.total"
+        ng-change="changePage()"
+        max-size="options.pagination.maxSize"
+        rotate="options.pagination.rotate"
+      )
